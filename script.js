@@ -1,6 +1,47 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+function generatePassword () {
+    // STEP 1: Getting user input
+    var passLength = prompt("What is the length of the password?");
+
+    // validate the passLength if its > 8 or < 128
+
+    var includeLower = confirm("Do you want to include lowercase?");
+    var includeUpper = confirm("Do you want to include uppercase?");
+    // ask confirm question for numeric
+    // ask confirm question for special characters
+
+    console.log(includeLower)
+    console.log(includeUpper)
+    console.log(passLength)
+
+    // STEP 2: determining what to include in the password
+    var lowerCharSet = "abcde";
+    var upperCharSet = "ABCDE";
+    var selections = "";
+
+    if(includeLower) {
+        selections = selections + lowerCharSet
+    }
+
+    if(includeUpper) {
+        selections = selections + upperCharSet
+    }
+    console.log(selections)
+
+    // STEP 3: Generating the random password based on the selections
+    var randomPassword = "";
+
+    for(i = 0; i < passLength; i++){
+        var randomNum = Math.floor(Math.random() * selections.length);
+        var randomChar = selections.charAt(randomNum)
+        randomPassword = randomPassword + randomChar;
+    }
+
+    return randomPassword;
+}
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -12,74 +53,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// Ask user to enter number of characters of their password
-function generatePassword() {
-   window.prompt("How many characters would you like your password to contain?")
-  
-  } 
-
-  var chosenLength = {
-  pwLength = 8 - 128,
-  min8: function () {
-    window.alert("Password length must be at least 8 characters")
-  },
-  max129: function() {
-    window.alert("Password length must be less than 129 characters")
-  },
-}
-
-function specialCharacter (){
-    window.alert("Click OK to confirm including special characters")
-  }; //True or False
-  
-
-  if (generatePassword.pwLength < 8) {
-    var min8()
-  } else if (generatePassword.pwLength > 128) {
-    var max129()
-  } else { var specialCharacter()
-  };
-
-
-//Ask user to choose whether to include special character
-
-if (var specialCharacter()) {
-
-}
-
-
-
-
-var numericNo = window.alert("Click OK to confirm including numeric characters"); //True or False
-var lowerCharacter = window.alert("Click OK to confirm including lowercase characters"); //True or False
-var upperCharacter = window.alert("Click OK to confirm including uppercase characters"); //True or False
-
-//Aray of numeric options for computer to pick from
-var numOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-// Get random numeric number from array of options
-var numIndex = Math.floor(Math.random() * numOptions.length);
-var numChoice = numOption[numIndex];
-
-//Aray of uppercase character options for computer to pick from
-var upCharOption = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
-// Get random uppercase character from array of options
-var upCharIndex = Math.floor(Math.random() * upCharOption.length);
-var upCharChoice = upCharOption[upCharIndex]
-
-//Aray of lowercase character options for computer to pick from
-var loCharOption = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// Get random lowercase character from array of options
-var loCharIndex = Math.floor(Math.random() * loCharOption.length);
-var loCharChoice = loCharOption[loCharIndex];
-
-//Aray of special character options for computer to pick from
-var specialCharOption = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "[", "]", ";", ":", "'", ",", ".", "/", "<", ">", "?"];
-// Get random special character from array of options
-var specialCharIndex = Math.floor(Math.random() * specialCharOption.length);
-var specialCharChoice = specialCharOption[specialCharIndex];
-
-
