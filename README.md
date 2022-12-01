@@ -4,7 +4,7 @@
 
 In this project, the developer is given a starter code to build a browser application that will generate random passwords according to criterias specified by the user. In the process of building this application, developer can consolidate their learning of javascript functions taught in week 3 of coding bootcamp.
 
-You can access the application at 
+You can access the application at https://sandy5433.github.io/password-generator/
 
 ## Usage
 
